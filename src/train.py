@@ -377,7 +377,7 @@ if __name__ == '__main__':
     tr_filter_dl = DataLoader(dataset=tr_filter_ds, batch_size=args.batch_size, sampler=SequentialSampler(tr_filter_ds), collate_fn=collate_fn, num_workers=args.num_workers, pin_memory=False)
 
     experiment_path = args.model_path + args.experiment_name + '/'
-
+    '''
     if args.logger == 'neptune':
         logger = NeptuneLogger(
                     project_name=args.neptune_project,
@@ -389,7 +389,8 @@ if __name__ == '__main__':
     elif args.logger == 'tensorboard':
         logger = TensorBoardLogger(save_dir=args.model_path + args.experiment_name)
     else:
-        logger = None
+    '''
+    logger = None
 
     ckpt_save_path = experiment_path + '/ckpt/'
     if not os.path.exists(ckpt_save_path):
