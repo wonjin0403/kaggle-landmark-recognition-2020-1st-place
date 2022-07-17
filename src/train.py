@@ -408,8 +408,8 @@ if __name__ == '__main__':
                               early_stop_callback=None,
                               num_sanity_val_steps=args.num_sanity_val_steps,
                               gradient_clip_val=5.0,
-                              distributed_backend = args.distributed_backend,
-                              sync_batchnorm = args.sync_batchnorm)
+                              distributed_backend = args.distributed_backend,)
+                              #sync_batchnorm = args.sync_batchnorm)
 
     model = Model(args, tr_dl, val_dl, tr_filter_dl, train_filter=train_filter, metric_crit=metric_crit, metric_crit_val=metric_crit_val, allowed_classes=allowed_classes)
 
