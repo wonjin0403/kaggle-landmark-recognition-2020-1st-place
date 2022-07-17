@@ -395,7 +395,7 @@ if __name__ == '__main__':
     ckpt_save_path = experiment_path + '/ckpt/'
     if not os.path.exists(ckpt_save_path):
         os.makedirs(ckpt_save_path)
-    ckpt = ModelCheckpoint(ckpt_save_path, monitor='val_gap_pp', verbose=False, mode='max',period=1, save_top_k=1, save_last=True, save_weights_only=args.save_weights_only)
+    ckpt = ModelCheckpoint(ckpt_save_path, monitor='val_gap_pp', verbose=False, mode='max', save_top_k=1, save_last=True, save_weights_only=args.save_weights_only)
 
     trainer = Trainer(gpus=args.gpus, 
                               logger=logger, 
