@@ -44,7 +44,7 @@ def setup():
     valid = pd.read_csv(args.data_path_2019 + args.valid_csv_fn)
     #valid["img_folder"] = args.img_path_val
     #valid['landmarks'] = valid['landmarks'].apply(lambda x:fix_row(x))
-    valid['landmark_id'] = valid['landmarks'].fillna(-1)
+    #valid['landmark_id'] = valid['landmarks'].fillna(-1)
     #valid['landmarks'].fillna('',inplace=True)
     valid['landmark_id'] = valid['landmark_id'].astype(int)
 
