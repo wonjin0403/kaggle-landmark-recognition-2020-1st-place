@@ -46,6 +46,7 @@ def setup():
     #valid['landmarks'] = valid['landmarks'].apply(lambda x:fix_row(x))
     #valid['landmark_id'] = valid['landmarks'].fillna(-1)
     #valid['landmarks'].fillna('',inplace=True)
+    valid["img_folder"] = args.img_path_train
     valid['landmark_id'] = valid['landmark_id'].astype(int)
 
     
