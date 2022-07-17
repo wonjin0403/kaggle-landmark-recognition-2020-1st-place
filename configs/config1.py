@@ -5,9 +5,9 @@ abs_path = os.path.dirname(__file__)
 
 args = {
     'model_path':'../models/',
-    'data_path':'/ssd/kaggle_landmark/input/',
-    'data_path_2019':'/ssd/kaggle_landmark/2019/',
-    'valid_csv_fn':'recognition_solution_v2.1.csv',
+    'data_path':'../input/landmark-recognition-2020/train',
+    'data_path_2019':'../input/landmark-recognition-2020/train',
+    'valid_csv_fn':'train.csv',
     'train_csv_fn':'train.csv',
 
     'gpus':'0,1',
