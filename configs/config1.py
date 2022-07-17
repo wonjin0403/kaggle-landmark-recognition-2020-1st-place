@@ -5,8 +5,8 @@ abs_path = os.path.dirname(__file__)
 
 args = {
     'model_path':'../models/',
-    'data_path':'/kaggle/working/kaggle-landmark-recognition-2020-1st-place/',
-    'data_path_2019':'/kaggle/working/kaggle-landmark-recognition-2020-1st-place/',
+    'data_path':'/kaggle/input/landmark-recognition-2020/',
+    'data_path_2019':'/kaggle/input/landmark-recognition-2020/',
     'valid_csv_fn':'train.csv',
     'train_csv_fn':'train.csv',
 
