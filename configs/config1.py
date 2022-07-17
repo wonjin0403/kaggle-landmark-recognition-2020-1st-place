@@ -10,7 +10,7 @@ args = {
     'valid_csv_fn':'train.csv',
     'train_csv_fn':'train.csv',
 
-    'gpus':'0,1',
+    'gpus':'0',
     'filter_warnings':True,
     'logger': 'neptune',
     'num_sanity_val_steps': 0,
