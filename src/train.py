@@ -41,7 +41,7 @@ def setup():
 
     data = pd.read_csv(args.data_path + args.train_csv_fn)
     data = data.sample(frac=1).reset_index(drop=True)
-    data = copy.deepcopy(data[:20]) #int(data.shape[0] * 0.001 * 1/4)])
+    data = copy.deepcopy(data[:200]) #int(data.shape[0] * 0.001 * 1/4)])
     train = copy.deepcopy(data[:int(data.shape[0] * 0.7)]).reset_index(drop=True)
     train["img_folder"] = args.img_path_train
     print("train shape", train.shape)
