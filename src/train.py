@@ -7,6 +7,7 @@ from loss import *
 import numpy as np
 import pandas as pd
 import math
+import random
 from collections import OrderedDict
 
 import pytorch_lightning as pl
@@ -37,15 +38,13 @@ def setup():
     print("Seed", args.seed)
     set_seed(args.seed)
 
-    train = pd.read_csv(args.data_path + args.train_csv_fn)
+    data = pd.read_csv(args.data_path + args.train_csv_fn)
+    data = data.sample(frac=1).reset_index(drop=True)
+    train = data[:int(train.shape[0] * 0.7)]
     train["img_folder"] = args.img_path_train
     print("train shape", train.shape)
 
-    valid = pd.read_csv(args.data_path_2019 + args.valid_csv_fn)
-    #valid["img_folder"] = args.img_path_val
-    #valid['landmarks'] = valid['landmarks'].apply(lambda x:fix_row(x))
-    #valid['landmark_id'] = valid['landmarks'].fillna(-1)
-    #valid['landmarks'].fillna('',inplace=True)
+    valid = data[int(train.shape[0] * 0.7):]
     valid["img_folder"] = args.img_path_train
     valid['landmark_id'] = valid['landmark_id'].astype(int)
 
