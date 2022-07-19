@@ -52,7 +52,7 @@ args = {
     'optimizer': "sgd",
     'weight_decay':1e-4,
     'lr': 0.05,
-    'batch_size': 32,
+    'batch_size': 64,
     'max_epochs': 10,
     'scheduler': {"method":"cosine","warmup_epochs": 1},
     
