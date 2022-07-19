@@ -41,11 +41,11 @@ def setup():
 
     data = pd.read_csv(args.data_path + args.train_csv_fn)
     data = data.sample(frac=1).reset_index(drop=True)
-    train = copy(data[:int(data.shape[0] * 0.7)]).reset_index(drop=True)
+    train = copy.deepcopy(data[:int(data.shape[0] * 0.7)]).reset_index(drop=True)
     train["img_folder"] = args.img_path_train
     print("train shape", train.shape)
 
-    valid = copy(data[int(data.shape[0] * 0.7):]).reset_index(drop=True)
+    valid = copy.deepcopy(data[int(data.shape[0] * 0.7):]).reset_index(drop=True)
 
     valid["img_folder"] = args.img_path_train
     valid['landmark_id'] = valid['landmark_id'].astype(int)
