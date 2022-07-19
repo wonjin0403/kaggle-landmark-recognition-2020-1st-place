@@ -64,12 +64,12 @@ args = {
 }
 
 args['tr_aug'] = A.Compose([
-    A.SmallestMaxSize(512),
+    A.SmallestMaxSize(224),
     A.RandomCrop(height=args['crop_size'],width=args['crop_size'],p=1.),
     A.HorizontalFlip(p=0.5),
     ])
 
 args['val_aug'] = A.Compose([
-    A.SmallestMaxSize(512),
+    A.SmallestMaxSize(224),
     A.CenterCrop(height=args['crop_size'],width=args['crop_size'],p=1.)
 ])
