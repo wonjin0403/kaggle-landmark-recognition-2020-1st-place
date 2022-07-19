@@ -32,7 +32,7 @@ args = {
     'pretrained_weights': None,
 
     'normalization':'imagenet',
-    'crop_size':448,
+    'crop_size':224,
 
     'backbone':'gluon_seresnext101_32x4d',
     'embedding_size': 512,
