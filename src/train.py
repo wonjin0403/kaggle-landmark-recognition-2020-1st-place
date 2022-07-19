@@ -115,7 +115,7 @@ class Model(pl.LightningModule):
             self.num_train_steps = math.ceil(len(self.tr_dl) / args.gradient_accumulation_steps)
 
         cfg = dict()
-        cfg["n_classes"] = config.num_classes #81313
+        cfg["n_classes"] = 81313
         cfg["backbone"] = "tf_efficientnet_lite0"#"tf_efficientnet_b0_ns"
         cfg["pretrained"] = True
         cfg["in_channels"] = 3
