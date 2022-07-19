@@ -277,6 +277,9 @@ class Model(pl.LightningModule):
         val_outputs = outputs[0]
         tr_filter_outputs = outputs[1]
 
+        print(val_outputs)
+        print(tr_filter_outputs)
+        
         out_val = {}
         for key in val_outputs[0].keys():
             out_val[key] = torch.cat([o[key] for o in val_outputs])
