@@ -8,6 +8,7 @@ import numpy as np
 import pandas as pd
 import math
 import random
+import copy
 from collections import OrderedDict
 
 import pytorch_lightning as pl
@@ -40,11 +41,12 @@ def setup():
 
     data = pd.read_csv(args.data_path + args.train_csv_fn)
     data = data.sample(frac=1).reset_index(drop=True)
-    train = data[:int(data.shape[0] * 0.7)]
+    train = copy(data[:int(data.shape[0] * 0.7)]).reset_index(drop=True)
     train["img_folder"] = args.img_path_train
     print("train shape", train.shape)
 
-    valid = data[int(data.shape[0] * 0.7):]
+    valid = copy(data[int(data.shape[0] * 0.7):]).reset_index(drop=True)
+
     valid["img_folder"] = args.img_path_train
     valid['landmark_id'] = valid['landmark_id'].astype(int)
 
