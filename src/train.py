@@ -114,7 +114,21 @@ class Model(pl.LightningModule):
         else:
             self.num_train_steps = math.ceil(len(self.tr_dl) / args.gradient_accumulation_steps)
 
-        self.model = Net(args)
+        cfg = dict()
+        cfg["n_classes"] = config.num_classes #81313
+        cfg["backbone"] = "tf_efficientnet_lite0"#"tf_efficientnet_b0_ns"
+        cfg["pretrained"] = True
+        cfg["in_channels"] = 3
+        cfg["stride"] = (1,1)
+        cfg["pool"] = "gem"
+        cfg["gem_p_trainable"] = True
+        cfg["embedding_size"] = 512
+        cfg["headless"] = False
+        cfg["loss"] = 'adaptive_arcface'
+        cfg["arcface_s"] = 45
+        cfg["arcface_m"] = 0.3
+        cfg["dilations"] = [3,6,9]            
+        self.model = Net(cfg)
     
 
     def forward(self, x, get_embeddings=False):
